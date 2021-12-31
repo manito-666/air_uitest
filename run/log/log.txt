@@ -1,0 +1,1 @@
+{"tag": "function", "depth": 1, "time": 1640933838.257487, "data": {"name": "assert_equal", "call_args": {"first": true, "second": true, "msg": "\u8bbe\u5907\u8fde\u63a5\u6570\u91cf\u81f3\u5c11\u4e3a2"}, "start_time": 1640933838.2572181, "ret": null, "end_time": 1640933838.257472}}

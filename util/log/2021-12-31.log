@@ -1,0 +1,6 @@
+2021-12-31 14:56:55,900 - util.log.mylog - INFO - 测试IH游戏项目
+2021-12-31 14:56:59,158 - util.log.mylog - INFO - 进入设备为['RF8M50WTNNF']的RunTestCase
+2021-12-31 14:56:59,263 - util.log.mylog - INFO - [('RF8M50WTNNF', 'device'), ('emulator-5554', 'device')]设备的待测用例为：['case1', 'case2']
+2021-12-31 14:57:18,165 - util.log.mylog - INFO - 测试IH游戏项目
+2021-12-31 14:57:18,250 - util.log.mylog - INFO - 进入设备为['RF8M50WTNNF']的RunTestCase
+2021-12-31 14:57:18,339 - util.log.mylog - INFO - [('RF8M50WTNNF', 'device'), ('emulator-5554', 'device')]设备的待测用例为：['case1', 'case2']
