@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 #author：wzp
-import unittest
+import unittest,os,sys
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from common.madb import m
 from config.path import *
 from airtest.core.api import *
@@ -29,21 +32,21 @@ def RunTestCase():
     scriptList = File.GetPyList(TestCasePath)
     l.info("{}设备的待测用例为：{}".format(TestList,scriptList))
     # 初始化测试套件
-    # suite = unittest.TestSuite()
-    # runner = unittest.TextTestRunner()
-    # # 初始化poco
-    # poco = AndroidUiautomationPoco().device
-    # for i in range(len(scriptList)):
-    #     fileName = scriptList[i]
-    #     l.debug("fileName={}.py".format(fileName))
-    #     if fileName in scriptList:
-    #         result = globals()[fileName].run_case(m.getdevices())
-    #         # 根据result类型判断调试单个方法or全部方法
-    #         if isinstance(result, unittest.suite.TestSuite):
-    #             suite.addTests(result)
-    #         else:
-    #             suite.addTest(result)
-    # runner.run(suite)
+    suite = unittest.TestSuite()
+    runner = unittest.TextTestRunner()
+    # 初始化poco
+    poco = AndroidUiautomationPoco().device
+    for i in range(len(scriptList)):
+        fileName = scriptList[i]
+        l.debug("fileName={}.py".format(fileName))
+        if fileName in scriptList:
+            result = globals()[fileName].run_case(m.getdevices())
+            # 根据result类型判断调试单个方法or全部方法
+            if isinstance(result, unittest.suite.TestSuite):
+                suite.addTests(result)
+            else:
+                suite.addTest(result)
+    runner.run(suite)
     # simple_report(__file__, logpath=True,logfile='{}/run/log/log.txt'.format(BASE_DIR),output='{}/subject.html'.format(Reportpath))
     # l.info("测试报告在{}/subject.html查看".format(Reportpath))
     # sendmail()
