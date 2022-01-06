@@ -13,6 +13,9 @@ from util import File
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 from common.send_email import sendmail
 from airtest.report.report import simple_report
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from airtest.core.android.adb import ADB
 adb = ADB()
 
