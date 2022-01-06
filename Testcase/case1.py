@@ -32,23 +32,20 @@ def run_case(devices):
             self.poco = AndroidUiautomationPoco(use_airtest_input=True, screenshot_each_action=False)
             start_app(package)
             sleep(3)
-            # wait(Template(r"{}/tpl1640068655560.png".format(case_img)))
-            # sleep(2)
-            # touch(Template(r"{}/tpl1640068670489.png".format(case_img)))
-            # sleep(1)
-            wait(Template(r"{}/tpl1640070907191.png".format(case_img)))
+
+            wait(Template(r"{}/tpl1641439963719.png".format(case_img)))
             sleep(2)
-            touch(Template(r"{}/tpl1640070907191.png".format(case_img)))
+            touch(Template(r"{}/tpl1641439963719.png".format(case_img)))
             sleep(2)
             l.info("游客登录")
-            touch(Template(r"{}/tpl1640071317775.png".format(case_img)))
+            touch(Template(r"{}/tpl1641439993430.png".format(case_img,times=2,duration=0.01)))
             sleep(3)
-            l.info("进入游戏")
-            wait(Template(r"{}/tpl1640071409968.png".format(case_img)))
-            touch(Template(r"{}/tpl1640070316002.png".format(case_img)))
+            l.info("点击进入游戏")
+            wait(Template(r"{}/tpl1641440479868.png".format(case_img)))
+            touch(Template(r"{}/tpl1641440148357.png".format(case_img)))
             sleep(2)
             l.info("点击消息")
-            touch(Template(r"{}/tpl1640070970149.png".format(case_img)))
+            touch(Template(r"{}/tpl1641440166490.png".format(case_img)))
             if assert_exists(Template(r"{}/tpl1640070352186.png".format(case_img))):
                 l.info("查看游戏公告成功")
             else:
@@ -60,9 +57,7 @@ def run_case(devices):
             l.info("测试结束")
             stop_app(package)
 
-
     srcSuite = unittest.TestLoader().loadTestsFromTestCase(Test1)
-    # srcSuite =Test1("test1")
     return srcSuite
 
 
