@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
-import inspect
+import inspect,sys
 import unittest
 from util.log.mylog import l
 from common.madb import m
 from airtest.core.api import *
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from poco.drivers.android.uiautomation import AndroidUiautomationPoco
 from config.path import *
 
