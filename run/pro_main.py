@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 #author：wzp
 import unittest,os,sys
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from common.madb import m
 from config.path import *
 Path = os.path.abspath(os.path.dirname(__file__))
