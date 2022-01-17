@@ -27,7 +27,8 @@ def RunTestCase():
     l.info("进入设备为{}的RunTestCase".format(m.getdevices()))
     m.get_androidversion()
     m.get_androidmodel()
-    # m.get_androidsize()
+    m.get_androidsize()
+    m.isinstalled()
     if not os.path.exists(TestCasePath):
         l.error("测试用例需放到‘TestCase’文件目录下")
     TestList=m.getdevices()
@@ -50,9 +51,9 @@ def RunTestCase():
             else:
                 suite.addTest(result)
     runner.run(suite)
-    # simple_report(__file__, logpath=True,logfile='{}/run/log/log.txt'.format(BASE_DIR),output='{}/subject.html'.format(Reportpath))
-    # l.info("测试报告在{}/subject.html查看".format(Reportpath))
-    # sendmail()
+    simple_report(__file__, logpath=True,logfile='{}/run/log/log.txt'.format(BASE_DIR),output='{}/subject.html'.format(Reportpath))
+    l.info("测试报告在{}/subject.html查看".format(Reportpath))
+    sendmail()
 
 
 

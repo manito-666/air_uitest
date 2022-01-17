@@ -33,14 +33,17 @@ def run_case(devices):
             touch(Template(r"{}/tpl1641439963719.png".format(case_img)))
             sleep(2)
             l.info("游客登录")
-            touch(Template(r"{}/tpl1641439993430.png".format(case_img)))
+            touch(Template(r"{}/tpl1642402804463.png".format(case_img)))
             sleep(2)
             l.info("进入游戏")
-            wait(Template(r"{}/tpl1641440479868.png".format(case_img)))
+            touch(Template(r"{}/tpl1642403244950.png".format(case_img)))
             sleep(2)
-            touch(Template(r"{}/tpl1641440479868.png".format(case_img)))
+            l.info("关闭新手签到")
+            wait(Template(r"{}/tpl1642402568927.png".format(case_img)))
             sleep(2)
-            if assert_exists(Template(r"{}/tpl1641440843793.png".format(case_img))):
+            touch(Template(r"{}/tpl1642402568927.png".format(case_img)))
+            sleep(2)
+            if assert_exists(Template(r"{}/tpl1642402637724.png".format(case_img))):
                 l.info("查看游戏ID成功")
                 sleep(2)
             else:

@@ -32,7 +32,10 @@ def getAndroid(path, key):
     con.read(path)
     result = con.get("Android", key)
     return result
-
+def getBasicConfig(path, key):
+    con.read(path)
+    result = con.get("basic_config", key)
+    return result
 
 
 # 重新回写配置文件

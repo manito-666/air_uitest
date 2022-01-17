@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #author：wzp
 import unittest,os,sys
+import multiprocessing
 Path = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(Path)[0]
 sys.path.append(rootPath)
@@ -25,7 +26,8 @@ adb = ADB()
 
 auto_setup(__file__, logdir=True)
 #运行Testcase的主函数
-def RunTestCase():
+
+def run_case(count):
     # 获取设备列表
     l.info("进入设备为{}的RunTestCase".format(m.getdevices()))
 
@@ -37,8 +39,10 @@ def RunTestCase():
     devicesNum = len(devicesList) > 1
     print("本次连接{}个设备，分别是".format(len(devicesList)), devicesList)
     assert_equal(devicesNum, True, "设备连接数量至少为2")
+
     for i in range(len(devicesList)):
         connect_device("android:///" + devicesList[i][0])
+        print(devicesList)
     # 通过GetPyList方法，取得目录里可测试的用例列表
         scriptList = File.GetPyList(TestCasePath)
 
@@ -67,8 +71,20 @@ def RunTestCase():
 
 
 
+
 if __name__ == '__main__':
-    RunTestCase()
+    p_list = []
+    for _ in range(1):
+        p = multiprocessing.Process(target=run_case, args=(1,))
+        p_list.append(p)
+        print(p.name)
+
+    for i in p_list:
+        i.start()
+        print(i.pid)
+
+    for j in p_list:
+        j.join()
 
 
 
