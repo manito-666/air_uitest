@@ -138,8 +138,7 @@ class Madb:
         m.AppInstall()
         return False
 
-    def get_skip_pushapk2devices(self):
-        return self._skip_pushapk2devices
+
 
 
 m=Madb()
