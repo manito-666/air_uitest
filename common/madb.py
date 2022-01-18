@@ -135,6 +135,7 @@ class Madb:
                 l.info("在{}上发现已安装{}".format(devices, package))
                 return True
         l.info("在{}上没找到包{}".format(devices, package))
+        m.AppInstall()
         return False
 
     def get_skip_pushapk2devices(self):
